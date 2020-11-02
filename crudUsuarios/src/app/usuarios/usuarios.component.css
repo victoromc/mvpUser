@@ -1,0 +1,23 @@
+.containerForm {
+    margin-top: 30px;
+}
+
+.subOp1 {
+    float: left;
+    width: 20%;
+    display: inline-block;
+    text-align: justify;
+}
+
+.subOp2 {
+    margin-left: 15%;
+    display: inline-block;
+    text-align: justify;
+}
+
+.componentForm {
+    display: block;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}

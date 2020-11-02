@@ -1,0 +1,103 @@
+<div>
+    <div>
+        <h2>Usuários cadastrados:</h2>
+        <table>
+            <tr>
+                <th style="padding-right: 20px;">Id</th>
+                <th style="padding-right: 20px;">Nome</th>
+                <th style="padding-right: 20px;">Sobrenome</th>
+                <th style="padding-right: 20px;">CPF</th>
+                <th style="padding-right: 20px;">Senha</th>
+            </tr>
+
+            <tr *ngFor="let user of users">
+                <th style="padding-right: 20px;">{{user._id}}</th>
+                <th style="padding-right: 20px;">{{user.firstName}}</th>
+                <th style="padding-right: 20px;">{{user.lastName}}</th>
+                <th style="padding-right: 20px;">{{user.cpf}}</th>
+                <th style="padding-right: 20px;">{{user.password}}</th>
+            </tr>
+        </table>
+    </div>
+    <div class="containerForm">
+        <div class="subOp1">
+            <h2>Cadastrar usuário:</h2>
+            <form #f="ngForm" (ngSubmit)="onSubmitCadastro(f)" novalidate>
+                <label>Nome: </label>
+                <input required type="text" name="firstName" [(ngModel)]="user.firstName" class="componentForm" />
+
+                <label>Sobrenome: </label>
+                <input required type="text" name="lastName" [(ngModel)]="user.lastName" class="componentForm" />
+
+                <label>CPF:</label>
+                <input required type="text" name="cpf" [(ngModel)]="user.cpf" class="componentForm" />
+
+                <label>Senha:</label>
+                <input required type="text" name="password" [(ngModel)]="user.password" class="componentForm" />
+
+                <button class="componentForm">Cadastrar</button>
+            </form>
+        </div>
+
+        <div class="subOp2">
+            <h2>Atualizar usuário:</h2>
+            <form #g="ngForm" (ngSubmit)="onSubmitUpdate(g)" novalidate>
+                <label>ID: </label>
+                <input required type="text" name="id" [(ngModel)]="userAtt._id" class="componentForm" />
+
+                <label>Nome: </label>
+                <input type="text" name="firstName" [(ngModel)]="userAtt.firstName" class="componentForm" />
+
+                <label>Sobrenome: </label>
+                <input type="text" name="lastName" [(ngModel)]="userAtt.lastName" class="componentForm" />
+
+                <label>CPF:</label>
+                <input type="text" name="cpf" [(ngModel)]="userAtt.cpf" class="componentForm" />
+
+                <label>Senha:</label>
+                <input type="text" name="password" [(ngModel)]="userAtt.password" class="componentForm" />
+
+
+                <button class="componentForm">Atualizar</button>
+            </form>
+        </div>
+    </div>
+    <div class="containerForm">
+        <div class="subOp1">
+            <h2> Buscar um usuário:</h2>
+            <form #h="ngForm" (ngSubmit)="onSubmitGetUsuario(h)" novalidate>
+                <label>ID: </label>
+                <input required type="text" name="id" [(ngModel)]="setId" class="componentForm" />
+                <button class="componentForm">Buscar</button>
+            </form>
+
+            <table>
+                <tr>
+                    <th style="padding-right: 20px;">Id</th>
+                    <th style="padding-right: 20px;">Nome</th>
+                    <th style="padding-right: 20px;">Sobrenome</th>
+                    <th style="padding-right: 20px;">CPF</th>
+                    <th style="padding-right: 20px;">Senha</th>
+                </tr>
+
+                <tr>
+                    <th style="padding-right: 20px;">{{userT._id}}</th>
+                    <th style="padding-right: 20px;">{{userT.firstName}}</th>
+                    <th style="padding-right: 20px;">{{userT.lastName}}</th>
+                    <th style="padding-right: 20px;">{{userT.cpf}}</th>
+                    <th style="padding-right: 20px;">{{userT.password}}</th>
+                </tr>
+            </table>
+        </div>
+
+        <div class="subOp2">
+            <h2> Deletar um usuário:</h2>
+            <form #i="ngForm" (ngSubmit)="onSubmitDelete(i)" novalidate>
+                <label>ID: </label>
+                <input required type="text" name="id" [(ngModel)]="setIdDelete" class="componentForm" />
+                <button class="componentForm">Deletar</button>
+            </form>
+        </div>
+    </div>
+
+</div>
